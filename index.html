@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Items</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Sex</th>
+        <th>DoB</th>
+        <th>Address</th>
+        <!-- Add more columns here -->
+        <th>QR Code</th>
+      </tr>
+      <?!= getDataFromSheet(); ?>
+    </table>
+
+    <script>
+      function getDataFromSheet() {
+        var url = 'Yhttps://script.google.com/macros/s/AKfycbyCAM37J-Yf6UYyI89elz4pkDXKOZ22k9lOYlTcZwtrq1lpm1hQ7hX7UpuUlzFE47l1/exec';
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, false);
+        xhr.send();
+
+        if (xhr.status === 200) {
+          return xhr.responseText;
+        } else {
+          return 'Error retrieving data from the server.';
+        }
+      }
+    </script>
+  </body>
+</html>
