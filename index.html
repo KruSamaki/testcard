@@ -11,15 +11,17 @@
     <nav>
       <div class="logo">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Emblem_of_the_Ministry_of_Education%2C_Youth_and_Sport_%28Cambodia%29.svg" alt="Khmer Academy Logo">
-        <h1 class="title">អនុវិទ្យាល័យ សាមគ្គី</h1>
+        <div​ style="line-height: 10px;"><p class="title">អនុវិទ្យាល័យ សាមគ្គី</p>
+            <p class="subtitle" style="font-size: 12px;">លេខកូដសាលា៖​ ០២១១០៥០៣៧០២</p>
+        </div>
       </div>
-      <ul id="ul">
+      <ul id="ul" style="display: flex;">
         <li><a href="#">ទំព័រដើម</a></li>
         <li><a href="#">អំពី</a></li>
         <li><a href="#">វគ្គសិក្សា</a></li>
         <li><a href="#">ទំនាក់ទំនង</a></li>
       </ul>
-      <div class="hamburger" onclick="toggleMobileMenu()">
+      <div class="hamburger" style="padding-right: 10px;" onclick="toggleMobileMenu()">
         <span></span>
         <span></span>
         <span></span>
@@ -28,7 +30,7 @@
   </header>
   
   
-    <ul id="ul" style="display: none;">
+    <ul id="ul" style="display: none; font-size: 24px;">
       <li><a href="#">ទំព័រដើម</a></li>
       <li><a href="#">អពំី</a></li>
       <li><a href="#">វគ្គសិក្សា</a></li>
@@ -54,43 +56,49 @@
         </div>
       </div>
     </section>
-
-    <div class="news-container">
-      <!-- News items will be dynamically added here -->
+<h3 style="padding-left: 20px;">ព្រឹត្តិការណ៍ និងព័ត៌មាន</h3>
+<!-- news items -->
+<div class="news-container" id="news-container"></div>
+<div id="loading-text">សូមរង់ចាំបន្តិច...</div>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-button">&times;</span>
+    <div class="popup-header">
+      <h2 id="popup-title"></h2>
+      <p id="popup-date-author">Date: <span id="popup-date"></span> | Author: <span id="popup-author"></span></p>
     </div>
-    
-    <div class="popup-container" style="display: none;">
-      <div class="popup-content">
-        <span class="close-popup">&times;</span>
-        <h3 class="popup-title"></h3>
-        <p class="popup-paragraph"></p>
-        <img class="popup-image" src="" alt="Popup Image">
-      </div>
+    <div id="popup-content"></div>
+    <div id="popup-images"></div>
+  </div>
+</div>
+<!-- <h3 style="padding-left: 20px;">សកម្មភាពសិក្សា</h3> -->
+<section class="courses">
+  <h2 class="animate__animated animate__fadeInDown">សកម្មភាពសិក្សា</h2>
+  <div class="course-list">
+    <div class="course-card animate__animated animate__fadeInUp" onclick="showCourseDetails(0)">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s" alt="Course 1">
+      <h3>វគ្គសិក្សា វិទ្យាសាស្រ្ដកុំព្យូទ័រ</h3>
+      <p>វគ្គនេះផ្ដល់ជូនអ្នកសិក្សាអំពីជំនាញយ៉ាងសកម្មដល់សាលា និងសហគមន៍សូមអរគុណ។</p>
+      <a href="#" class="course-link">Learn More</a>
     </div>
+    <div class="course-card animate__animated animate__fadeInUp" onclick="showCourseDetails(1)">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:AND9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s" alt="Course 2">
+      <h3>វគ្គនឹងក្លាយជាសេដ្ឋី</h3>
+      <p>ធ្វើយ៉ាងណាឱ្យអ្នកក្លាយជាសេដ្ឋដូចក្ដីប្រាថ្នា និងមានបានយ៉ាងមានប្រសិទ្ធិភាពបំផុត។</p>
+      <a href="#" class="course-link">Learn More</a>
+    </div>
+    <div class="course-card animate__animated animate__fadeInUp" onclick="showCourseDetails(2)">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s" alt="Course 3">
+      <h3>វគ្គភាសាបរទេស</h3>
+      <p>បន្ថែមឱ្យអ្នកមានជំនាញភាសាយ៉ាងខ្លាំង</p>
+      <a href="#" class="course-link">រៀនបន្ថែម</a>
+    </div>
+  </div>
+</section>
 
-    <section class="courses">
-      <h2 class="animate__animated animate__fadeInDown">Our Courses</h2>
-      <div class="course-list">
-        <div class="course-card animate__animated animate__fadeInUp">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s" alt="Course 1">
-          <h3>វគ្គសិក្សា វិទ្យាសាស្រ្ដកុំព្យូទ័រ</h3>
-          <p>វគ្គនេះផ្ដល់ជូនអ្នកសិក្សាអំពីជំនាញយ៉ាងសកម្មដល់សាលា និងសហគមន៍សូមអរគុណ។</p>
-          <a href="#" class="course-link">Learn More</a>
-        </div>
-        <div class="course-card animate__animated animate__fadeInUp">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s" alt="Course 2">
-          <h3>វគ្គនឹងក្លាយជាសេដ្ឋី</h3>
-          <p>ធ្វើយ៉ាងណាឱ្យអ្នកក្លាយជាសេដ្ឋដូចក្ដីប្រាថ្នា និងមានបានយ៉ាងមានប្រសិទ្ធិភាពបំផុត។</p>
-          <a href="#" class="course-link">Learn More</a>
-        </div>
-        <div class="course-card animate__animated animate__fadeInUp">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s" alt="Course 3">
-          <h3>វគ្គភាសាបរទេស/h3>
-          <p>បន្ថែមឱ្យអ្នកមានជំនាញភាសាយ៉ាងខ្លាំង</p>
-          <a href="#" class="course-link">រៀនបន្ថែម</a>
-        </div>
-      </div>
-    </section>
+<!-- <script>
+  
+</script> -->
   </main>
 
   <footer>
