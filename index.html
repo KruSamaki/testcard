@@ -1,44 +1,103 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Items</title>
-    <style>
-      table {
-        border-collapse: collapse;
-      }
-      th, td {
-        border: 1px solid black;
-        padding: 8px;
-      }
-    </style>
-  </head>
-  <body>
-    <table>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Sex</th>
-        <th>DoB</th>
-        <th>Address</th>
-        <!-- Add more columns here -->
-        <th>QR Code</th>
-      </tr>
-      <?!= getDataFromSheet(); ?>
-    </table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khmer Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Emblem_of_the_Ministry_of_Education%2C_Youth_and_Sport_%28Cambodia%29.svg" alt="Khmer Academy Logo">
+        <h1 class="title">អនុវិទ្យាល័យ សាមគ្គី</h1>
+      </div>
+      <ul id="ul">
+        <li><a href="#">ទំព័រដើម</a></li>
+        <li><a href="#">អំពី</a></li>
+        <li><a href="#">វគ្គសិក្សា</a></li>
+        <li><a href="#">ទំនាក់ទំនង</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+  
+  
+    <ul id="ul" style="display: none;">
+      <li><a href="#">ទំព័រដើម</a></li>
+      <li><a href="#">អពំី</a></li>
+      <li><a href="#">វគ្គសិក្សា</a></li>
+      <li><a href="#">ទំនាក់ទំនង</a></li>
+    </ul>
 
-    <script>
-      function getDataFromSheet() {
-        var url = 'Yhttps://script.google.com/macros/s/AKfycbyCAM37J-Yf6UYyI89elz4pkDXKOZ22k9lOYlTcZwtrq1lpm1hQ7hX7UpuUlzFE47l1/exec';
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', url, false);
-        xhr.send();
+  <main>
+    <section class="hero">
+      <h2 class="animate__animated animate__fadeInDown">មុខងារក្នុងវិស័យអប់រំ ស្រុកសំឡូត</h2>
+      <p class="animate__animated animate__fadeInUp">សាលារៀនរដ្ឋឥឡូវផ្លាស់ប្ដូរគ្រប់វិស័យ ដូចជាការធ្វើយ៉ាងណាឱ្យស្រុកសំឡូតមានភាពរីកចម្រើនខ្លាំង។ ឆ្នាំ២០២៤នេះទុរេនសំឡូតបានកើនទិន្នផលរហូតដល់១៧លានដុល្លាសហរដ្ឋអាមេរិក។</p>
+      <a href="#" class="cta animate__animated animate__fadeInUp">មើលបន្ថែម</a>
+    </section>
 
-        if (xhr.status === 200) {
-          return xhr.responseText;
-        } else {
-          return 'Error retrieving data from the server.';
-        }
-      }
-    </script>
-  </body>
+    <section class="about">
+      <h2 class="animate__animated animate__fadeInLeft">អំពីសាលាអនុវិទ្យាល័យសាមគ្គី</h2>
+      <div class="about-content">
+        <div class="about-image animate__animated animate__fadeInRight">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnT6F7Z3PKdfziY8QqvxCSwoN-lIVXpl7QkgNca5vSbZM_2YfJrvmjBDazwT1gGWLdKnLfQnTdjlN_cS3yzonTfAwtfMFNqPboPsIeCOUSfshWLG8xhY-fjE7JoF7eczQcPIiqQszwlk1CsLYRXk_ooGGBfntsyjNWUjVPlUx56xOUBtllxclVwDojhaQ/s1280/photo_14_2024-06-05_13-08-57.jpg" alt="Khmer Academy Campus">
+        </div>
+        <div class="about-text animate__animated animate__fadeInLeft">
+          <p>សាលារៀនរដ្ឋឥឡូវផ្លាស់ប្ដូរគ្រប់វិស័យ ដូចជាការធ្វើយ៉ាងណាឱ្យស្រុកសំឡូតមានភាពរីកចម្រើនខ្លាំង។ ឆ្នាំ២០២៤នេះទុរេនសំឡូតបានកើនទិន្នផលរហូតដល់១៧លានដុល្លាសហរដ្ឋអាមេរិក។</p>
+          <p>បន្ទប់សិក្សាពួកយើងមាន៩បន្ទប់ សិស្សសរុបមានចំនួន៣៩០នាក់ក្នុងឆ្នាំ២០២៤នេះ។</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="news-container">
+      <!-- News items will be dynamically added here -->
+    </div>
+    
+    <div class="popup-container" style="display: none;">
+      <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <h3 class="popup-title"></h3>
+        <p class="popup-paragraph"></p>
+        <img class="popup-image" src="" alt="Popup Image">
+      </div>
+    </div>
+
+    <section class="courses">
+      <h2 class="animate__animated animate__fadeInDown">Our Courses</h2>
+      <div class="course-list">
+        <div class="course-card animate__animated animate__fadeInUp">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s" alt="Course 1">
+          <h3>វគ្គសិក្សា វិទ្យាសាស្រ្ដកុំព្យូទ័រ</h3>
+          <p>វគ្គនេះផ្ដល់ជូនអ្នកសិក្សាអំពីជំនាញយ៉ាងសកម្មដល់សាលា និងសហគមន៍សូមអរគុណ។</p>
+          <a href="#" class="course-link">Learn More</a>
+        </div>
+        <div class="course-card animate__animated animate__fadeInUp">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s" alt="Course 2">
+          <h3>វគ្គនឹងក្លាយជាសេដ្ឋី</h3>
+          <p>ធ្វើយ៉ាងណាឱ្យអ្នកក្លាយជាសេដ្ឋដូចក្ដីប្រាថ្នា និងមានបានយ៉ាងមានប្រសិទ្ធិភាពបំផុត។</p>
+          <a href="#" class="course-link">Learn More</a>
+        </div>
+        <div class="course-card animate__animated animate__fadeInUp">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s" alt="Course 3">
+          <h3>វគ្គភាសាបរទេស/h3>
+          <p>បន្ថែមឱ្យអ្នកមានជំនាញភាសាយ៉ាងខ្លាំង</p>
+          <a href="#" class="course-link">រៀនបន្ថែម</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Khmer Academy. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+  <script src="script.js"></script>
+</body>
 </html>
