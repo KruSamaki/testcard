@@ -140,14 +140,19 @@ main {
 }
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .about{
+    display: flex;
+    flex-direction: column;
+  }
   .about-content{
     display: block;
     flex-direction: column;
-    margin: auto;
+    text-align: center;
   }
-  .about-image{
-    display: block;
-    margin: auto;
+  .about-image img{
+    display: flex;
+    margin-left: 5%;
+    
   }
 }
 
@@ -397,7 +402,7 @@ footer {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 90%;
 }
 #popup-images img{
   width: 100%;
