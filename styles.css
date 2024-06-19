@@ -135,6 +135,21 @@ header nav ul li a.active {
 main {
   /* padding-top: 5px; */
 }
+.about-content{
+  display: flex;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .about-content{
+    display: block;
+    flex-direction: column;
+    margin: auto;
+  }
+  .about-image{
+    display: block;
+    margin: auto;
+  }
+}
 
 .hero {
   background-color: #f1f1f1;
