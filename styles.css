@@ -132,9 +132,7 @@ header nav ul li a.active {
   }
 }
 /* Main Content Styles */
-main {
-  /* padding-top: 5px; */
-}
+
 .about-content{
   display: flex;
 }
@@ -428,11 +426,12 @@ footer {
   font-size: 24px;
   position: fixed;
   text-align: center;
-  top: 45%;
+  top: 55%;
   align-items: center;
   left: 0;
   padding-top: 250px;
   top: 0;
+  color:#fff;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(3px);
 }
