@@ -45,8 +45,14 @@ const popupContent = document.getElementById("popup-content");
 const popupImages = document.getElementById("popup-images");
 const closeButton = document.querySelector(".close-button");
 const loadingText = document.getElementById("loading-text");
+const showMoreButton = document.createElement("button");
+showMoreButton.textContent = "មើលច្រើនទៀត ...";
+showMoreButton.classList.add("show-more-button");
 
-newsData.forEach(item => {
+// Show only the 5 latest posts
+const latestPosts = newsData.slice(0, 5);
+
+latestPosts.forEach(item => {
   const newsItem = document.createElement("div");
   newsItem.classList.add("news-item");
 
@@ -55,9 +61,8 @@ newsData.forEach(item => {
   newsItem.appendChild(img);
 
   const titleElement = document.createElement("h3");
-  titleElement.textContent = item.title +" - " + item.date;
+  titleElement.textContent = item.title + " - " + item.date;
   newsItem.appendChild(titleElement);
-
 
   const contentElement = document.createElement("p");
   contentElement.textContent = item.content.slice(0, 100) + "..."; // Show the first 100 characters of the content
@@ -65,6 +70,35 @@ newsData.forEach(item => {
 
   newsItem.addEventListener("click", () => showPopup(item));
   newsContainer.appendChild(newsItem);
+});
+
+newsContainer.appendChild(showMoreButton);
+
+showMoreButton.addEventListener("click", () => {
+  loadingText.style.display = "block";
+  setTimeout(() => {
+    newsContainer.innerHTML = "";
+    newsData.forEach(item => {
+      const newsItem = document.createElement("div");
+      newsItem.classList.add("news-item");
+  
+      const img = document.createElement("img");
+      img.src = item.images[0];
+      newsItem.appendChild(img);
+  
+      const titleElement = document.createElement("h3");
+      titleElement.textContent = item.title + " - " + item.date;
+      newsItem.appendChild(titleElement);
+  
+      const contentElement = document.createElement("p");
+      contentElement.textContent = item.content.slice(0, 100) + "..."; // Show the first 100 characters of the content
+      newsItem.appendChild(contentElement);
+  
+      newsItem.addEventListener("click", () => showPopup(item));
+      newsContainer.appendChild(newsItem);
+    });
+    loadingText.style.display = "none";
+  }, 2000); // Show loading text for 2 seconds
 });
 
 function showPopup(item) {

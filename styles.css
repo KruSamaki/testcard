@@ -59,6 +59,10 @@ header {
   justify-content: space-between;
   padding: 0 50px;
 }
+header a{
+  text-decoration: none;
+  color: #fff;
+}
 header .logo {
   font-size: 30px;
   text-transform: uppercase;
@@ -166,8 +170,8 @@ nav li {
 /* CSS for smaller screens (mobile) */
 @media (max-width: 767px) {
   .nav-icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     margin-right: 15px;
   }
 }
@@ -592,6 +596,9 @@ footer {
   .social-media-icon {
     margin-right: 20px;
   }
+  .iframe{
+    width: 100%;
+  }
 }
 /* card kru managenemtn */
 .container-kru {
@@ -671,3 +678,23 @@ footer {
   }
 }
 /* end card kru management */
+/* show more button */
+.show-more-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-button:hover {
+  background-color: #0056b3;
+}

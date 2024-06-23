@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="webimg/Moeyslogo.png" alt="My Langdy Logo"></a>
+            <div​ class="contitle">
+                <p class="titlelogo">អនុវិទ្យាល័យ សាមគ្គី</p>
+                <p class="subtitlelogo" style="font-size: 12px;">លេខកូដសាលា៖​ ០២១១០៥០៣៧០២</p>
+            </div>
+        <input type="checkbox" id="nav_check" hidden>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html" class="nav-link">
+                <img src="webimg/homeicon.png" alt="Home" class="nav-icon">
+                <span>ទំព័រដើម</span>
+              </a>
+            </li>
+            <li>
+              <a href="news.html" class="nav-link">
+                <img src="webimg/newsicon.png" alt="About" class="nav-icon">
+                <span>ព្រឹត្តិការណ៍ និងព័ត៌មាន</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">
+                <img src="webimg/educationicon.png" alt="Courses" class="nav-icon">
+                <span>ការអប់រំ</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">
+                <img src="webimg/newsMoeys.png" alt="Contact" class="nav-icon">
+                <span>ដំណឹង និងលិខិត</span>
+              </a>
+            </li>
+            <li>
+              <a href="galllery.html" class="nav-link">
+                <img src="webimg/galleryicon.png" alt="Contact" class="nav-icon">
+                <span>រូបថត</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    
+    <h3 style="padding-left: 20px;">ព្រឹត្តិការណ៍ និងព័ត៌មាន</h3>
+<!-- news items -->
+<div class="news-container" id="news-container"></div>
+<div id="loading-text">សូមរង់ចាំបន្តិច...</div>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-button">&times;</span>
+    <div class="popup-header">
+      <h2 id="popup-title"></h2>
+      <p id="popup-date-author">Date: <span id="popup-date"></span> | Author: <span id="popup-author"></span></p>
+    </div>
+    <div id="popup-content"></div>
+    <div id="popup-images"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
