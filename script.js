@@ -129,3 +129,62 @@ function closeCourseDetails() {
   popup.style.display = "none";
 }
 
+// Top cover of web show button click hide or show map
+function showorHide() {
+  // Get the div element with the class "showorHide"
+  const showOrHideDiv = document.querySelector('.showorHide');
+
+  // Get the button element
+  const showHideButton = document.querySelector('.cta');
+
+  // Toggle the visibility of the div
+  if (showOrHideDiv.style.display === 'none') {
+    showOrHideDiv.style.display = 'block'; // Show the div
+    showHideButton.textContent = 'បិទការបង្ហាញ'; // Change the button text to "Hide"
+  } else {
+    showOrHideDiv.style.display = 'none'; // Hide the div
+    showHideButton.textContent = 'មើលការបង្ហាញទីតាំង'; // Change the button text to "Show"
+  }
+}
+// Student chart
+const labels = [ '2018-2019', '2019-2020', '2020-2021', '2021-2022', '2022-2023', '2023-2024'];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'ចំនួនសិស្សសរុបតាមឆ្នាំសិក្សា',
+    data: [311, 294, 357, 394, 381, 383],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 205, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(153, 102, 255, 0.2)'
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 159, 64)',
+      'rgb(255, 205, 86)',
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+      'rgb(153, 102, 255)'
+    ],
+    borderWidth: 1
+  }]
+};
+
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    },
+    responsive: true,
+    maintainAspectRatio: false
+  }
+};
+
+const myChart = new Chart(document.getElementById('myChart'), config);
