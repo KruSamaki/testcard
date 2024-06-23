@@ -135,7 +135,7 @@ nav ul {
 }
 
 nav li {
-  margin: 0 20px;
+  margin: 0 10px;
 }
 
 .nav-link {
@@ -593,4 +593,81 @@ footer {
     margin-right: 20px;
   }
 }
+/* card kru managenemtn */
+.container-kru {
+  display: grid;
+  width: 70%;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-gap: 20px;
+  justify-content: center;
+  margin:auto;
+  margin-bottom:20px;
+}
 
+.card-kru {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-kru-image {
+  width: 120px;
+  
+}
+
+.card-kru-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-kru-content {
+  width: 60%;
+  padding: 20px;
+}
+
+.card-kru-content h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.card-kru-content p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+@media (max-width: 767px) {
+  .container-kru {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .card-kru {
+    flex-direction: row;
+    width:100%;
+    height: 150px;
+  }
+
+  .card-kru-image {
+    /* width: 100%; */
+    width: 190px;
+    height: 100%;
+  }
+
+  .card-kru-content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .card-kru-content h2 {
+    font-size: 16px;
+  }
+
+  .card-kru-content p {
+    font-size: 12px;
+  }
+}
+/* end card kru management */
