@@ -5,7 +5,7 @@
 }
 @font-face {
   font-family: 'font-paragraph';
-  src: url(fonts/KhmerOS_siemreap.ttf);
+  src: url(fonts/Khmer\ OS\ Battambang\ Regular.ttf);
 }
 * {
   margin: 0;
@@ -316,7 +316,7 @@ nav li {
 
 /* Footer Styles */
 footer {
-  background-color: #5d5c5c;
+  background-color: #343a40;
   color: #fff;
   padding: 5px;
   text-align: center;
