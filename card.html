@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Layout</title>
+  <style>
+    /* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Card Container */
+.card-container {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Card Styles */
+.card {
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card-button {
+  position: absolute;
+  bottom: 20px;
+  left: 25%;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f15b2d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card-button:hover {
+  background-color: #424242;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .card {
+    width: 220px;
+    max-width: 400px;
+    
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .card-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    bottom: 10px;
+    left: 25%;
+    background-color: #f15b2d;
+  }
+  .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+}
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-image" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVjsa_XFZvXaypkk8gpFBLyU-9XyVc90m4lUwtuqCS4Z2h6s9euaD7AoNQl8kSEx8QOo83EobZTDn5UepDZwmAqJqu_a7OW8BmiNSwnsEAOsEWuQDfQzTIaTG9zl2v2c4C6unibES-5pR4DO7YfO7uUy6ZRRx-XT3O3oWJTdBcwLi3C4kx7G3FjLgM8I8/w640-h360/photo_22_2024-06-05_13-08-57.jpg');">
+        <div class="card-overlay">
+          <h2 class="card-title">ព្រឹត្តិការណ៍ និងព័ត៌មាន</h2>
+          <a href="news.html" class="card-button">See More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj42dBPvr59oVMNbccadGfWNP1IeJTZ2zUN_riwnpdam8noYs0oCpJEpiBbyxh1cO-TeoW-n7rUWwIJeVXD2e6MxEZSo9VoSyBqbSOjFxJfudie489w4kWBEPtE8xuyG22nl6EZ28mMvrVP1cip34NiYSWXihP_-JuEwfz1vT-EuxKKcnY_99gLfFrd1oQ/w640-h360/photo_13_2024-06-05_13-08-57.jpg');">
+        <div class="card-overlay">
+          <h2 class="card-title">​ឯកសារ និងលិខិត</h2>
+          <a href="MoEYS.html" class="card-button">See More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnT6F7Z3PKdfziY8QqvxCSwoN-lIVXpl7QkgNca5vSbZM_2YfJrvmjBDazwT1gGWLdKnLfQnTdjlN_cS3yzonTfAwtfMFNqPboPsIeCOUSfshWLG8xhY-fjE7JoF7eczQcPIiqQszwlk1CsLYRXk_ooGGBfntsyjNWUjVPlUx56xOUBtllxclVwDojhaQ/w640-h360/photo_14_2024-06-05_13-08-57.jpg');">
+        <div class="card-overlay">
+          <h2 class="card-title">ការអប់រំ</h2>
+          <a href="wait.html" class="card-button">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipDmBe-pbPyZYQwcwtBAHXRwDl5OZPuj-GF2s53IHrJonk-g83mMCgRWtWep5RjetHAKtqp5l0Wj1UrUULbDeIknNZJ4J3WjyEuv8-U4qEFEnI12msNm3jT0yhsgr5C0fzsZMoR39oMuQCXIWerRt5vMswAuKBDLoDp_11wVlNOANtjZOsjEgWCVWnkS4/w640-h360/photo_23_2024-06-05_13-08-57.jpg');">
+        <div class="card-overlay">
+          <h2 class="card-title">រូបថត</h2>
+          <a href="galllery.html" class="card-button">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
