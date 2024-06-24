@@ -11,24 +11,38 @@ function toggleMobileMenu() {
 // New items store in js
 const newsData = [
   {
+    title: "អាជ្ញាធរចុះមកផ្សព្វផ្សាយអំពីច្បាប់ចរាចរណ៍ ក្មេងទំនើង គ្រឿងញៀន និងសុវត្ថិភាពសង្គម",
+    content: "នៅព្រឹកថ្ងៃទី២០ ខែមិថុនា ឆ្នាំ២០២៤ លោកអធិការរងនៃអធិការដ្ឋានស្រុកសំឡូត បានសហការជាមួយអាជ្ញាធររដ្ឋបាលឃុំស៊ុង បានដឹកនាំក្រុមការងារចុះមកផ្សព្វផ្សាយអំពីច្បាប់ចរាចរណ៍ ក្មេងទំនើង គ្រឿងញៀន និងសុវត្ថិភាពសង្គមដល់សិស្សានុសិស្សនៃសាលាអនុវិទ្យាល័យសាមគ្គី។",
+    author: "My Langdy",
+    date: "២០-មិថុនា-២០២៤",
+    images: ["images-post/p1.jpg", "images-post/p2.jpg","images-post/p3.jpg","images-post/p4.jpg","images-post/p5.jpg","images-post/p6.jpg","images-post/p7.jpg","images-post/p8.jpg"]
+  },
+  {
+    title: "គណៈគ្រប់គ្រងសាលារៀនប្រជុំកំណត់ទីតាំងសាងសង់បន្ទប់កុំព្យូទ័រ",
+    content: "នៅព្រឹកថ្ងៃសុក្រ ទី១៤ ខែមិថុនា ឆ្នាំ២០២៤ គណៈគ្រប់គ្រងសាលាអនុវិទ្យាល័យសាមគ្គី (គ.គ.ស)បានប្រជុំពិភាក្សាកំណត់ទីតាំងសម្រាប់សាងសង់បន្ទប់កុំព្យូទ័រ ដែលជាជំនួយរបស់អង្គការ KHEN ប្រចាំស្រុកសំឡូត។",
+    author: "My Langdy",
+    date: "១៤-មិថុនា-២០២៤",
+    images: ["images-post/p01.jpg", "images-post/p02.jpg","images-post/p03.jpg","images-post/p04.jpg","images-post/p05.jpg"]
+  },
+  {
     title: "លោកប្រធានការិយាល័យអប់រំស្រុកសំឡូត ជួបសំណេះសំណាលជាមួយលោកគ្រូអ្នកគ្រូ នៃសាលាអនុវិទ្យាល័យសាមគ្គី",
     content: "លោកប្រធានការិយាល័យអប់រំនៃរដ្ឋបាលស្រុកសំឡូត បានជួបសំណេះសំណាលជាមួយលោកគ្រូអ្នកគ្រូនៃសាលាអនុវិទ្យាល័យសាមគ្គី។",
     author: "My Langdy",
-    date: "06-June-2024",
+    date: "០៦-មិថុនា-២០២៤",
     images: ["images-post/9.jpg", "images-post/10.jpg","images-post/11.jpg"]
   },
   {
     title: "កិច្ចប្រជុំពាក់ព័ន្ធគ្រឿងញៀន ក្មេងទំនើង និងសន្ដិសុខសណ្ដាប់ធ្នាប់សង្គម",
     content: "នៅថ្ងៃទី៥ ខែមិថុនា ឆ្នាំ២០២៤ លោកអភិបាលរងនៃគណៈអភិបាលស្រុកសំឡូត និងក្រុមកាងារបានចុះពិនិត្យ និងណែនាំការងារពាក់ព័ន្ធ គ្រឿងញៀន ក្មេងទំនើង និងសន្តិសុខសុវត្ថិភាពសង្គម ជាមួយលោកគ្រូ អ្នកគ្រូនៃអនុវិទ្យាល័យសាមគ្គី ។",
     author: "My Langdy",
-    date: "05-June-2024",
+    date: "០៥-មិថុនា-២០២៤",
     images: ["images-post/6.jpg","images-post/7.jpg","images-post/8.jpg"]
   },
   {
     title: "សកម្មភាពចាក់ដីពង្រីកទីធ្លាសាលារៀន",
     content: "នៅថ្ងៃទី១១ ខែឧសភា ឆ្នាំ២០២៤ លោកមេឃុំស៊ុង លោកមេភូមិចំការចេក និងក្រុមការងារបានកៀងគរថវិកាពីប្រជាជនក្នុងការស្ដារអាងយកដីចាក់ពង្រីកទីធ្លាសាលារៀនអនុវិទ្យាល័យសាមគ្គី បានសរុបចំនួន ៥០០ឡាន។",
     author: "My Langdy",
-    date: "2024-May-12",
+    date: "១២-ឧសភា-២០២៤",
     images: ["images-post/1.jpg", "images-post/2.jpg","images-post/3.jpg","images-post/4.jpg","images-post/5.jpg"]
   },
   
@@ -126,42 +140,6 @@ closeButton.addEventListener("click", () => {
 });
 
 
-// Course
-const courses = [
-  {
-    title: "វគ្គសិក្សា វិទ្យាសាស្រ្ដកុំព្យូទ័រ",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s",
-    description: "វគ្គនេះផ្ដល់ជូនអ្នកសិក្សាអំពីជំនាញយ៉ាងសកម្មដល់សាលា និងសហគមន៍សូមអរគុណ។"
-  },
-  {
-    title: "វគ្គនឹងក្លាយជាសេដ្ឋី",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s",
-    description: "ធ្វើយ៉ាងណាឱ្យអ្នកក្លាយជាសេដ្ឋដូចក្ដីប្រាថ្នា និងមានបានយ៉ាងមានប្រសិទ្ធិភាពបំផុត។"
-  },
-  {
-    title: "វគ្គភាសាបរទេស",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5Qo9VcOWVp0BA0GhynQougAPh7bVafVWg&s",
-    description: "បន្ថែមឱ្យអ្នកមានជំនាញភាសាយ៉ាងខ្លាំង"
-  }
-];
-
-function showCourseDetails(index) {
-  const popup = document.getElementById("course-popup");
-  const popupTitle = document.getElementById("popup-title");
-  const popupImage = document.getElementById("popup-image");
-  const popupDescription = document.getElementById("popup-description");
-
-  popupTitle.textContent = courses[index].title;
-  popupImage.src = courses[index].image;
-  popupDescription.textContent = courses[index].description;
-
-  popup.style.display = "block";
-}
-
-function closeCourseDetails() {
-  const popup = document.getElementById("course-popup");
-  popup.style.display = "none";
-}
 
 // Top cover of web show button click hide or show map
 function showorHide() {

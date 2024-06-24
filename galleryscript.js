@@ -1,28 +1,28 @@
 const imageData = [
     {
-      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS_gpfh2GvOzinHY2mWxauH4ynkGb7Zfc0KQ&s",
-      caption: "Image 1",
+      src: "images-post/p05.jpg",
+      caption: "កម្រង",
       year: "2024"
     },
     {
-      src: "https://media.tacdn.com/media/attractions-splice-spp-674x446/12/3f/5c/aa.jpg",
-      caption: "Image 2",
-      year: "2023"
-    },
-    {
-      src: "https://media.tacdn.com/media/attractions-splice-spp-674x446/0c/0b/c0/10.jpg",
-      caption: "Image 3",
+      src: "images-post/p6.jpg",
+      caption: "កម្រង២០២៤",
       year: "2024"
     },
     {
-      src: "https://cdn.getyourguide.com/img/tour/615f8cd68a337.jpeg/146.jpg",
-      caption: "Image 4",
-      year: "2022"
+      src: "images-post/9.jpg",
+      caption: "កម្រង",
+      year: "2024"
     },
     {
-      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwbU9avalt9otZZmfvU-cl7rP5zXeEcNGuWQ&s",
-      caption: "Image 5",
-      year: "2020"
+      src: "images-post/p7.jpg",
+      caption: "កម្រង",
+      year: "2024"
+    },
+    {
+      src: "images-post/p5.jpg",
+      caption: "កម្រង",
+      year: "2024"
     }
   ];
 
