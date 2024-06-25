@@ -1,280 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .news-container{
-            width: 90%;
-            margin: auto;
-        }
-        img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-}
-.news-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .news-container {
+      width: 90%;
+      margin: auto;
+    }
 
-.news-item {
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
 
-.news-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-}
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
 
-.popup {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
+    .news-item {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-.popup-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
+    .news-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
 
-.close-button {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
 
-.close-button:hover,
-.close-button:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+    .popup-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
 
-.full-screen-popup {
-  display: none;
-  position: fixed;
-  z-index: 99999999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+    .close-button {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-.full-screen-popup img {
-  max-width: 90%;
-  max-height: 90%;
-  margin-top: 10%;
-}
+    .close-button:hover,
+    .close-button:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-.full-screen-close-button {
-    color: #aaa;
-  float: right;
-  font-size: 35px;
-  font-weight: bold;
-}
-    </style>
+    .full-screen-popup {
+      display: none;
+      position: fixed;
+      z-index: 99999999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .full-screen-popup img {
+      max-width: 90%;
+      max-height: 90%;
+      margin-top: 10%;
+    }
+
+    .full-screen-close-button {
+      color: #aaa;
+      float: right;
+      font-size: 35px;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><img src="webimg/Moeyslogo.png" alt="My Langdy Logo"></a>
-            <div​ class="contitle">
-                <p class="titlelogo">អនុវិទ្យាល័យ សាមគ្គី</p>
-                <p class="subtitlelogo" style="font-size: 12px;">លេខកូដសាលា៖​ ០២១១០៥០៣៧០២</p>
-            </div>
-        <input type="checkbox" id="nav_check" hidden>
-        </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="index.html" class="nav-link">
-                <img src="webimg/homeicon.png" alt="Home" class="nav-icon">
-                <span>ទំព័រដើម</span>
-              </a>
-            </li>
-            <li>
-              <a href="news.html" class="nav-link">
-                <img src="webimg/newsicon.png" alt="About" class="nav-icon">
-                <span>ព្រឹត្តិការណ៍ និងព័ត៌មាន</span>
-              </a>
-            </li>
-            <li>
-              <a href="wait.html" class="nav-link">
-                <img src="webimg/educationicon.png" alt="Courses" class="nav-icon">
-                <span>ការអប់រំ</span>
-              </a>
-            </li>
-            <li>
-              <a href="MoEYS.html" class="nav-link">
-                <img src="webimg/newsMoeys.png" alt="Contact" class="nav-icon">
-                <span>ឯកសារ និងលិខិត</span>
-              </a>
-            </li>
-            <li>
-              <a href="galllery.html" class="nav-link">
-                <img src="webimg/galleryicon.png" alt="Contact" class="nav-icon">
-                <span>រូបថត</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <label for="nav_check" class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </label>
-    </header>
-    
-    <h3 style="padding-left: 20px;margin-top: 10px;">ឯកសារ និងលិខិត</h3>
-<!-- news items -->
-<div class="news-container" id="news-container"></div>
-<div id="loading-text">សូមរង់ចាំបន្តិច...</div>
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close-button">&times;</span>
-    <div class="popup-header">
-      <h2 id="popup-title"></h2>
-      <p id="popup-date-author">Date: <span id="popup-date"></span> | Author: <span id="popup-author"></span></p>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="webimg/Moeyslogo.png" alt="My Langdy Logo"></a>
+      <div​ class="contitle">
+        <p class="titlelogo">អនុវិទ្យាល័យ សាមគ្គី</p>
+        <p class="subtitlelogo" style="font-size: 12px;">លេខកូដសាលា៖​ ០២១១០៥០៣៧០២</p>
     </div>
-    <div id="popup-content"></div>
-    <div id="popup-images"></div>
+    <input type="checkbox" id="nav_check" hidden>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html" class="nav-link">
+            <img src="webimg/homeicon.png" alt="Home" class="nav-icon">
+            <span>ទំព័រដើម</span>
+          </a>
+        </li>
+        <li>
+          <a href="news.html" class="nav-link">
+            <img src="webimg/newsicon.png" alt="About" class="nav-icon">
+            <span>ព្រឹត្តិការណ៍ និងព័ត៌មាន</span>
+          </a>
+        </li>
+        <li>
+          <a href="wait.html" class="nav-link">
+            <img src="webimg/educationicon.png" alt="Courses" class="nav-icon">
+            <span>ការអប់រំ</span>
+          </a>
+        </li>
+        <li>
+          <a href="MoEYS.html" class="nav-link">
+            <img src="webimg/newsMoeys.png" alt="Contact" class="nav-icon">
+            <span>ឯកសារ និងលិខិត</span>
+          </a>
+        </li>
+        <li>
+          <a href="galllery.html" class="nav-link">
+            <img src="webimg/galleryicon.png" alt="Contact" class="nav-icon">
+            <span>រូបថត</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <label for="nav_check" class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
+  </header>
+
+  <h3 style="padding-left: 20px;margin-top: 10px;">ឯកសារ និងលិខិត</h3>
+  <!-- news items -->
+  <div class="news-container" id="news-container"></div>
+  <div id="loading-text">សូមរង់ចាំបន្តិច...</div>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close-button">&times;</span>
+      <div class="popup-header">
+        <h2 id="popup-title"></h2>
+        <p id="popup-date-author">Date: <span id="popup-date"></span> | Author: <span id="popup-author"></span></p>
+      </div>
+      <div id="popup-content"></div>
+      <div id="popup-images"></div>
+    </div>
   </div>
-</div>
-<div id="full-screen-popup" class="full-screen-popup">
-  <span class="full-screen-close-button">&times;</span>
-  <img id="full-screen-image" src="">
-</div>
+  <div id="full-screen-popup" class="full-screen-popup">
+    <span class="full-screen-close-button">&times;</span>
+    <img id="full-screen-image" src="">
+  </div>
 
-<script>
-const newsData = [
-  {
-    title: "លោកប្រធានការិយាល័យអប់រំស្រុកសំឡូត ជួបសំណេះសំណាលជាមួយលោកគ្រូអ្នកគ្រូ នៃសាលាអនុវិទ្យាល័យសាមគ្គី",
-    content: "លោកប្រធានការិយាល័យអប់រំនៃរដ្ឋបាលស្រុកសំឡូត បានជួបសំណេះសំណាលជាមួយលោកគ្រូអ្នកគ្រូនៃសាលាអនុវិទ្យាល័យសាមគ្គី។",
-    author: "My Langdy",
-    date: "06-June-2024",
-    images: ["https://www.knongsrok.com/wp-content/uploads/2024/02/1-2.jpeg", "images-post/10.jpg","images-post/11.jpg"]
-  }
-];
+  <script>
+    const newsData = [
+      {
+        title: "លិខិតអំពាវនាវ អំពីការខ្វះខាតដីសម្រាប់ចាក់ពង្រីកទីធ្លាសាលារៀនអនុវិទ្យាល័យសាមគ្គី",
+        content: "កាលពីថ្ងៃទី១១ ខែឧសភា ឆ្នាំ២០២៤ ប្រជាជនដែលរស់នៅជុំវិញសាលាអនុវិទ្យាល័យសាមគ្គី បានមូលមតិគ្នាប្រមូលថវិកាស្ដារអាងដើម្បីយកដីមកចាក់ពង្រីកទីធ្លាសាលា និងដើម្បីយកទឹកសម្រាប់ប្រើប្រាស់ក្នុងរដូវប្រាំង (ដីចាក់បាន៥០០ឡាន)។ ដោយនៅមានការខ្វះខាតដីជាច្រើនឡានដែលត្រូវចាក់ពង្រីកទីធ្លាសាលារៀន សាលាសូមធ្វើការអំពាវនាវដល់ព្រះតេជគុណគ្រប់ព្រះអង្គ សម្ដេច ឯកឧត្តម លោកជំទាវ លោក លោកស្រី មាតាបិតា អាណាព្យាបាលសិស្ស ព្រមទាំងអតីតសិស្សគ្រប់ជំនាន់ និងសម្បុរសជនជិតឆ្ងាយចូលរួមថវិកាក្នុងការចាក់ដីពង្រីកទីធ្លាសាលាតាមកម្លាំងសទ្ធាជ្រះថ្លា។",
+        author: "មី ឡងឌី",
+        date: "២៤-ឧសភា-២០២៤",
+        images: ["images-post/5.jpg"]
+      }
+    ];
 
-const newsContainer = document.getElementById("news-container");
-const popup = document.getElementById("popup");
-const fullScreenPopup = document.getElementById("full-screen-popup");
-const fullScreenImage = document.getElementById("full-screen-image");
-const popupTitle = document.getElementById("popup-title");
-const popupDate = document.getElementById("popup-date");
-const popupAuthor = document.getElementById("popup-author");
-const popupContent = document.getElementById("popup-content");
-const popupImages = document.getElementById("popup-images");
-const closeButton = document.querySelector(".close-button");
-const fullScreenCloseButton = document.querySelector(".full-screen-close-button");
-const loadingText = document.getElementById("loading-text");
-const showMoreButton = document.createElement("button");
-showMoreButton.textContent = "មើលច្រើនទៀត ...";
-showMoreButton.classList.add("show-more-button");
+    const newsContainer = document.getElementById("news-container");
+    const popup = document.getElementById("popup");
+    const fullScreenPopup = document.getElementById("full-screen-popup");
+    const fullScreenImage = document.getElementById("full-screen-image");
+    const popupTitle = document.getElementById("popup-title");
+    const popupDate = document.getElementById("popup-date");
+    const popupAuthor = document.getElementById("popup-author");
+    const popupContent = document.getElementById("popup-content");
+    const popupImages = document.getElementById("popup-images");
+    const closeButton = document.querySelector(".close-button");
+    const fullScreenCloseButton = document.querySelector(".full-screen-close-button");
+    const loadingText = document.getElementById("loading-text");
+    const showMoreButton = document.createElement("button");
+    showMoreButton.textContent = "មើលច្រើនទៀត ...";
+    showMoreButton.classList.add("show-more-button");
 
-const latestPosts = newsData.slice(0, 5);
+    const latestPosts = newsData.slice(0, 5);
 
-latestPosts.forEach(item => {
-  const newsItem = document.createElement("div");
-  newsItem.classList.add("news-item");
-
-  const img = document.createElement("img");
-  img.src = item.images[0];
-  newsItem.appendChild(img);
-  img.style.height="100%";
-
-  const titleElement = document.createElement("h3");
-  titleElement.textContent = item.title + " - " + item.date;
-  newsItem.appendChild(titleElement);
-
-  newsItem.addEventListener("click", () => showPopup(item));
-  newsContainer.appendChild(newsItem);
-});
-
-newsContainer.appendChild(showMoreButton);
-
-showMoreButton.addEventListener("click", () => {
-  loadingText.style.display = "block";
-  setTimeout(() => {
-    newsContainer.innerHTML = "";
-    newsData.forEach(item => {
+    latestPosts.forEach(item => {
       const newsItem = document.createElement("div");
       newsItem.classList.add("news-item");
-  
+
       const img = document.createElement("img");
       img.src = item.images[0];
       newsItem.appendChild(img);
-  
+      img.style.height = "100%";
+
       const titleElement = document.createElement("h3");
       titleElement.textContent = item.title + " - " + item.date;
       newsItem.appendChild(titleElement);
-  
-      const contentElement = document.createElement("p");
-      contentElement.textContent = item.content.slice(0, 100) + "...";
-      newsItem.appendChild(contentElement);
-  
+
       newsItem.addEventListener("click", () => showPopup(item));
       newsContainer.appendChild(newsItem);
     });
-    loadingText.style.display = "none";
-  }, 2000);
-});
 
-function showPopup(item) {
-  loadingText.style.display = "block";
-  setTimeout(() => {
-    popup.style.display = "block";
-    popupTitle.textContent = item.title;
-    popupDate.textContent = item.date;
-    popupAuthor.textContent = item.author;
-    popupContent.textContent = item.content;
+    newsContainer.appendChild(showMoreButton);
 
-    popupImages.innerHTML = "";
-    item.images.forEach(imageUrl => {
-      const img = document.createElement("img");
-      img.src = imageUrl;
-      img.classList.add("popup-image");
-      img.addEventListener("click", () => showFullScreenImage(imageUrl));
-      popupImages.appendChild(img);
+    showMoreButton.addEventListener("click", () => {
+      loadingText.style.display = "block";
+      setTimeout(() => {
+        newsContainer.innerHTML = "";
+        newsData.forEach(item => {
+          const newsItem = document.createElement("div");
+          newsItem.classList.add("news-item");
+
+          const img = document.createElement("img");
+          img.src = item.images[0];
+          newsItem.appendChild(img);
+
+          const titleElement = document.createElement("h3");
+          titleElement.textContent = item.title + " - " + item.date;
+          newsItem.appendChild(titleElement);
+
+          const contentElement = document.createElement("p");
+          contentElement.textContent = item.content.slice(0, 100) + "...";
+          newsItem.appendChild(contentElement);
+
+          newsItem.addEventListener("click", () => showPopup(item));
+          newsContainer.appendChild(newsItem);
+        });
+        loadingText.style.display = "none";
+      }, 2000);
     });
 
-    loadingText.style.display = "none";
-  }, 2000);
-}
+    function showPopup(item) {
+      loadingText.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "block";
+        popupTitle.textContent = item.title;
+        popupDate.textContent = item.date;
+        popupAuthor.textContent = item.author;
+        popupContent.textContent = item.content;
 
-function showFullScreenImage(imageUrl) {
-  fullScreenImage.src = imageUrl;
-  fullScreenPopup.style.display = "block";
-}
+        popupImages.innerHTML = "";
+        item.images.forEach(imageUrl => {
+          const img = document.createElement("img");
+          img.src = imageUrl;
+          img.classList.add("popup-image");
+          img.addEventListener("click", () => showFullScreenImage(imageUrl));
+          popupImages.appendChild(img);
+        });
 
-closeButton.addEventListener("click", () => {
-  popup.style.display = "none";
-});
+        loadingText.style.display = "none";
+      }, 2000);
+    }
 
-fullScreenCloseButton.addEventListener("click", () => {
-  fullScreenPopup.style.display = "none";
-});
-</script>
+    function showFullScreenImage(imageUrl) {
+      fullScreenImage.src = imageUrl;
+      fullScreenPopup.style.display = "block";
+    }
+
+    closeButton.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+
+    fullScreenCloseButton.addEventListener("click", () => {
+      fullScreenPopup.style.display = "none";
+    });
+  </script>
+
+  <div id="footer-div"></div>
+  <!-- Footer -->
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-div').innerHTML = data;
+      })
+      .catch(error => console.error(error));
+  </script>
 </body>
+
 </html>

@@ -1,27 +1,42 @@
 const imageData = [
     {
       src: "images-post/p05.jpg",
-      caption: "កម្រង",
+      caption: "2024",
       year: "2024"
     },
     {
       src: "images-post/p6.jpg",
-      caption: "កម្រង២០២៤",
+      caption: "2024",
       year: "2024"
     },
     {
       src: "images-post/9.jpg",
-      caption: "កម្រង",
+      caption: "2024",
       year: "2024"
     },
     {
       src: "images-post/p7.jpg",
-      caption: "កម្រង",
+      caption: "2024",
       year: "2024"
     },
     {
       src: "images-post/p5.jpg",
-      caption: "កម្រង",
+      caption: "2024",
+      year: "2024"
+    },
+    {
+      src: "images-post/k1.jpg",
+      caption: "2024",
+      year: "2024"
+    },
+    {
+      src: "images-post/k2.jpg",
+      caption: "2024",
+      year: "2024"
+    },
+    {
+      src: "images-post/k3.jpg",
+      caption: "2024",
       year: "2024"
     }
   ];

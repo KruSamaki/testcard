@@ -318,8 +318,30 @@ nav li {
 footer {
   background-color: #343a40;
   color: #fff;
-  padding: 5px;
+  padding: 20px;
   text-align: center;
+  font-size: 16px;
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+footer a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 15px;
+    font-size: 14px;
+  }
 }
 
 /* Responsive Styles */
